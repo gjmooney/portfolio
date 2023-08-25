@@ -16,10 +16,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
+    <html
+      lang="en"
+      className={`bg-background text-foreground antialiased ${inter.className}`}
+    >
+      <body className="min-h-screen">
         <Navbar />
-        {children}
+        <div className="container h-full">{children}</div>
       </body>
     </html>
   );
