@@ -1,4 +1,5 @@
 import AnimatedText from "@/components/AnimatedText";
+import HireMe from "@/components/HireMe";
 import { LinkArrow } from "@/components/Icons";
 import { buttonVariants } from "@/components/ui/button";
 import Image from "next/image";
@@ -41,6 +42,7 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <HireMe />
     </main>
   );
 }

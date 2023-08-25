@@ -21,7 +21,7 @@ const Logo = ({}) => {
     >
       <Link
         href="/"
-        className="flex h-16 w-16 items-center justify-center text-2xl font-bold text-secondary"
+        className="flex h-16 w-16 items-center justify-center text-2xl font-bold text-primary-foreground"
       >
         GM
       </Link>
