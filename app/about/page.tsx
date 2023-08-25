@@ -32,17 +32,6 @@ const page = () => {
           </p>
         </div>
 
-        {/* <div className="relative col-span-3 h-full w-full">
-          <div className="absolute left-4 top-0 h-[103%] w-[102%] rounded-2xl bg-red-300"></div>
-          <div className="absolute left-0 top-0 w-full rounded-2xl border-2 border-primary bg-blue-400">
-            <Image
-              src={profilePic}
-              alt="profile picture"
-              className="h-auto w-full rounded-2xl p-4"
-              style={{ borderRadius: "2rem" }}
-            />
-          </div>
-        </div> */}
         <div className="relative col-span-3 h-max rounded-2xl border-2 border-solid border-primary bg-secondary p-6">
           <div
             className={cn(
