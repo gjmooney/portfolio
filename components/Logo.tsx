@@ -16,7 +16,7 @@ const Logo = ({}) => {
           "#D9D9D9",
           "#0F172A",
         ],
-        transition: { duration: 2, repeat: Infinity },
+        transition: { duration: 3, repeat: Infinity },
       }}
     >
       <Link
