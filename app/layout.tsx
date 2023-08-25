@@ -21,7 +21,7 @@ export default function RootLayout({
       lang="en"
       className={`bg-background text-foreground antialiased ${inter.className}`}
     >
-      <body className="min-h-screen w-full">
+      <body className="min-h-screen w-full bg-secondary">
         <Navbar />
         <div className="container">{children}</div>
         <Footer />

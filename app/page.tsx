@@ -4,13 +4,14 @@ import { LinkArrow } from "@/components/Icons";
 import { buttonVariants } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
-import profilePic from "public/profile/hero-img-3-transformed.png";
+import heroPic from "public/profile/hero-img.png";
+
 export default function Home() {
   return (
     <main className="flex min-h-screen w-full items-center p-8">
       <div className="flex w-full items-center justify-between">
         <div className="w-1/2">
-          <Image src={profilePic} alt="profile picture" />
+          <Image src={heroPic} alt="profile picture" />
         </div>
         <div className="flex w-1/2 flex-col items-end self-center">
           <AnimatedText
