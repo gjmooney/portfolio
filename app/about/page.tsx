@@ -1,6 +1,7 @@
 "use client";
 
 import AnimatedText from "@/components/AnimatedText";
+import Experience from "@/components/Experience";
 import Skills from "@/components/Skills";
 import { cn } from "@/lib/utils";
 import {
@@ -109,6 +110,7 @@ const page = () => {
       </div>
 
       <Skills />
+      <Experience />
     </main>
   );
 };
