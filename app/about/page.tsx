@@ -1,7 +1,43 @@
+"use client";
+
 import AnimatedText from "@/components/AnimatedText";
+import Skills from "@/components/Skills";
 import { cn } from "@/lib/utils";
+import {
+  MotionValue,
+  useInView,
+  useMotionValue,
+  useSpring,
+} from "framer-motion";
 import Image from "next/image";
 import profilePic from "public/profile/about-img.jpg";
+import { useEffect, useRef } from "react";
+
+const AnimatedNumber = ({ value }: { value: number }) => {
+  const ref = useRef<HTMLSpanElement>(null);
+
+  const motionValue = useMotionValue<number>(0);
+  const springValue = useSpring(motionValue, {
+    duration: 3000,
+  }) as MotionValue<number>;
+  const isInView = useInView(ref, { once: true });
+
+  useEffect(() => {
+    if (isInView) {
+      motionValue.set(value);
+    }
+  }, [isInView, value, motionValue]);
+
+  useEffect(() => {
+    springValue.on("change", (latest) => {
+      if (ref.current && +latest.toFixed(0) <= value) {
+        ref.current.textContent = latest.toFixed(0);
+      }
+    });
+  }, [springValue, value]);
+
+  return <span ref={ref}>{value}</span>;
+};
 
 const page = () => {
   return (
@@ -43,9 +79,36 @@ const page = () => {
         </div>
 
         <div className="col-span-2 flex flex-col items-end justify-between">
-          right columns
+          <div className="flex flex-col items-end justify-center">
+            <span className="inline-block text-7xl font-bold">
+              <AnimatedNumber value={50} />+
+            </span>
+            <h2 className="text-xl font-medium capitalize text-primary/75">
+              satisfied clients
+            </h2>
+          </div>
+
+          <div className="flex flex-col items-end justify-center">
+            <span className="inline-block text-7xl font-bold">
+              <AnimatedNumber value={40} />+
+            </span>
+            <h2 className="text-xl font-medium capitalize text-primary/75">
+              projects completed
+            </h2>
+          </div>
+
+          <div className="flex flex-col items-end justify-center">
+            <span className="inline-block text-7xl font-bold">
+              <AnimatedNumber value={4} />+
+            </span>
+            <h2 className="text-xl font-medium capitalize text-primary/75">
+              years of experience
+            </h2>
+          </div>
         </div>
       </div>
+
+      <Skills />
     </main>
   );
 };
