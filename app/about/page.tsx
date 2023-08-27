@@ -77,12 +77,8 @@ const page = () => {
       </div>
 
       <Skills />
-      <Timeline isExperience label="Experience" experience={experiencesText} />
-      <Timeline
-        isExperience={false}
-        label="Education"
-        education={educationText}
-      />
+      <Timeline label="Experience" textArray={experiencesText} />
+      <Timeline label="Education" textArray={educationText} />
     </main>
   );
 };

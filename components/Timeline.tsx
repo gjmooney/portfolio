@@ -2,23 +2,15 @@
 
 import { motion, useScroll } from "framer-motion";
 import { useRef } from "react";
-import ExperienceDetails from "./details/ExperienceDetails";
-import { EducationText, ExperienceText } from "@/types/types";
-import EducationDetails from "./details/EducationDetails";
+
+import Details, { DetailsProps } from "./details/Details";
 
 interface TimelineProps {
   label: string;
-  experience?: ExperienceText[];
-  education?: EducationText[];
-  isExperience: boolean;
+  textArray: DetailsProps[];
 }
 
-const Timeline = ({
-  isExperience,
-  label,
-  experience,
-  education,
-}: TimelineProps) => {
+const Timeline = ({ label, textArray }: TimelineProps) => {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -38,28 +30,17 @@ const Timeline = ({
         />
 
         <ul className="flex flex-col items-start justify-between">
-          {isExperience
-            ? experience!.map((text) => (
-                <ExperienceDetails
-                  key={text.title}
-                  points={text.points}
-                  company={text.company}
-                  companyLink={text.companyLink}
-                  dates={text.dates}
-                  location={text.location}
-                  title={text.title}
-                />
-              ))
-            : education!.map((text) => (
-                <EducationDetails
-                  key={text.title}
-                  info={text.info}
-                  school={text.school}
-                  dates={text.dates}
-                  location={text.location}
-                  title={text.title}
-                />
-              ))}
+          {textArray.map((text) => (
+            <Details
+              key={text.title}
+              info={text.info}
+              institution={text.institution}
+              companyLink={text.companyLink}
+              dates={text.dates}
+              location={text.location}
+              title={text.title}
+            />
+          ))}
         </ul>
       </div>
     </div>

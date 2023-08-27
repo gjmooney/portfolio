@@ -1,15 +1,24 @@
+import { motion, spring } from "framer-motion";
 import { useRef } from "react";
 import ListItemIcon from "../ListItemIcon";
-import { motion, spring } from "framer-motion";
-import { EducationText } from "@/types/types";
 
-const EducationDetails = ({
+export interface DetailsProps {
+  title: string;
+  institution: string;
+  companyLink?: string;
+  dates: string;
+  location: string;
+  info: string[];
+}
+
+const Details = ({
   title,
-  school,
+  institution,
+  companyLink,
   dates,
   location,
   info,
-}: EducationText) => {
+}: DetailsProps) => {
   const ref = useRef<HTMLLIElement>(null);
 
   return (
@@ -27,15 +36,26 @@ const EducationDetails = ({
       >
         <h3 className="text-2xl font-bold capitalize ">{title}</h3>
         <h2 className="text-xl font-semibold capitalize text-pastel-purple">
-          @{school}
+          {companyLink ? (
+            <a href={companyLink} target="_blank" className="underline">
+              @{institution}
+            </a>
+          ) : (
+            <p>@{institution}</p>
+          )}
         </h2>
+
         <span className="font-medium capitalize text-primary/75">
           {dates} | {location}
         </span>
-        <p className="w-full font-medium">{info}</p>
+        {info.map((point, index) => (
+          <p key={index} className="w-full font-medium">
+            {point}
+          </p>
+        ))}
       </motion.div>
     </li>
   );
 };
 
-export default EducationDetails;
+export default Details;

@@ -48,11 +48,11 @@ export const OLDexperience = [
 export const experiencesText = [
   {
     title: "Robotics Software Developer",
-    company: "QuantStack",
+    institution: "QuantStack",
     companyLink: "https://quantstack.com",
     dates: "April 2022 - Present",
     location: "Paris, FR",
-    points: [
+    info: [
       "Developing JupyterLab extensions and widgets to facilitate the use of ROS on a web browser.",
       "Collaborating with RWTH to integrate a master's robotics course involving ROS into a JupyterHub environment",
       'Presented "Teaching ROS with JupyterLab" at ROSCon 2022 in Kyoto.',
@@ -61,31 +61,31 @@ export const experiencesText = [
   },
   {
     title: "Research Assistant",
-    company: "IGMR - RWTH Aachen University",
+    institution: "IGMR - RWTH Aachen University",
     companyLink: "https://quantstack.com",
     dates: "July 2021 - March 2022",
     location: "Aachen, DE",
-    points: [
+    info: [
       "Tested open-source robots and developed the contents of a ROS (Robot Operating System) seminar for master's students.",
     ],
   },
   {
     title: "Undergraduate Researcher Embodied Dexterity Group",
-    company: "UC Berkeley College of Engineering",
+    institution: "UC Berkeley College of Engineering",
     companyLink: "https://quantstack.com",
     dates: "August 2019 - May 2020",
     location: "Berkeley, CA",
-    points: [
+    info: [
       "Designed and 3D-printed gripper mechanisms for an autonomous underwater vehicle (AUV) with the goal of collecting coral samples from the Pacific ocean.Designed.",
     ],
   },
   {
     title: "Mechanical Engineering Intern",
-    company: "Tesla",
+    institution: "Tesla",
     companyLink: "https://quantstack.com",
     dates: "Jan 2019 - August 2019",
     location: "Fremont, CA",
-    points: [
+    info: [
       "Taught FANUC robots new manufacturing processes such as welding and adhesive application to implement design changes in the Model 3 production line.",
       "Tested the properties of boron-treated steel welds by performing shear and tensile tests and examining the cross-sectional cuts.",
       "Designed the Body In White (BIW) overall layout with the collaboration of automation vendors and factory engineers.",
@@ -93,11 +93,11 @@ export const experiencesText = [
   },
   {
     title: "Hybrid Robotics Research Assistant",
-    company: "UC Berkeley College of Engineering",
+    institution: "UC Berkeley College of Engineering",
     companyLink: "https://quantstack.com",
     dates: "June 2028 - December 2018",
     location: "Berkeley, CA",
-    points: [
+    info: [
       "Generated optimized trajectories for Agility Robotics two-legged robot, Cassie, by using FROST (Fast Robot Optimization and Simulation Toolkit) in Matlab.Generated.",
     ],
   },
@@ -106,16 +106,20 @@ export const experiencesText = [
 export const educationText = [
   {
     title: "MS, Robotic Systems Engineering",
-    school: "RWTH Aachen",
+    institution: "RWTH Aachen",
     dates: "October 2022 - April 2023",
     location: "Aachen, DE",
-    info: "Relevant courses included Data Structures and Algorithms, Computer Systems Engineering, and Artificial Intelligence.",
+    info: [
+      "Relevant courses included Data Structures and Algorithms, Computer Systems Engineering, and Artificial Intelligence.",
+    ],
   },
   {
     title: "BS, Mechanical Engineering",
-    school: "University of California,Berkeley",
+    institution: "University of California,Berkeley",
     dates: "September 2017 - May 2020",
     location: "Berkeley, CA",
-    info: "Completed a master's project on deep learning, developing a new neural network architecture for natural language understanding.",
+    info: [
+      "Completed a master's project on deep learning, developing a new neural network architecture for natural language understanding.",
+    ],
   },
 ];
