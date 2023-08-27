@@ -22,6 +22,7 @@ const EducationDetails = ({
       <motion.div
         initial={{ y: 50 }}
         whileInView={{ y: 0 }}
+        viewport={{ once: true }}
         transition={{ duration: 0.5, type: spring }}
       >
         <h3 className="text-2xl font-bold capitalize ">{title}</h3>
