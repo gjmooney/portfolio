@@ -10,7 +10,7 @@ interface SkillProps {
 const Skill = ({ name, x, y }: SkillProps) => {
   return (
     <motion.div
-      className="absolute flex cursor-pointer items-center justify-center rounded-full bg-primary px-6 py-3 font-semibold text-primary-foreground shadow-primary first:h-20 first:w-20"
+      className="absolute flex h-24 w-24 cursor-pointer items-center justify-center rounded-full bg-primary px-6 py-3 font-semibold text-primary-foreground shadow-primary first:h-20 first:w-20"
       whileHover={{
         scale: 1.05,
       }}
