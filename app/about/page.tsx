@@ -3,10 +3,13 @@ import AnimatedText from "@/components/animations/AnimatedText";
 import Experience from "@/components/Experience";
 import Skills from "@/components/Skills";
 import { cn } from "@/lib/utils";
+import { experiencesText } from "@/Text/TextBlurbs";
 import Image from "next/image";
 import profilePic from "public/profile/about-img.jpg";
 
 const page = () => {
+  const exp = experiencesText;
+
   return (
     <main className="flex min-h-screen flex-col items-center p-8 ">
       <AnimatedText text="Passion Fuels Purpose" className="mb-16 text-8xl" />

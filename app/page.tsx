@@ -1,4 +1,4 @@
-import AnimatedText from "@/components/AnimatedText";
+import AnimatedText from "@/components/animations/AnimatedText";
 import HireMe from "@/components/HireMe";
 import { LinkArrow } from "@/components/Icons";
 import { buttonVariants } from "@/components/ui/button";
