@@ -5,6 +5,7 @@ interface ListItemIconProps {
   reference: RefObject<HTMLLIElement>;
 }
 
+//TODO: forwardRef?
 const ListItemIcon = ({ reference }: ListItemIconProps) => {
   const { scrollYProgress } = useScroll({
     target: reference,
@@ -15,7 +16,7 @@ const ListItemIcon = ({ reference }: ListItemIconProps) => {
     <figure className="absolute left-0 stroke-primary">
       <svg className="-rotate-90" width="75" height="75" viewBox="0 0 100 100">
         <circle
-          cx="75"
+          cx="76"
           cy="50"
           r="20"
           className="fill-primary stroke-primary stroke-1"

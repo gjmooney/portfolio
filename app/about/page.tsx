@@ -1,15 +1,13 @@
 import AnimatedNumber from "@/components/animations/AnimatedNumber";
 import AnimatedText from "@/components/animations/AnimatedText";
-import Experience from "@/components/Experience";
 import Skills from "@/components/Skills";
+import Timeline from "@/components/Timeline";
 import { cn } from "@/lib/utils";
-import { experiencesText } from "@/Text/TextBlurbs";
+import { educationText, experiencesText } from "@/Text/TextBlurbs";
 import Image from "next/image";
 import profilePic from "public/profile/about-img.jpg";
 
 const page = () => {
-  const exp = experiencesText;
-
   return (
     <main className="flex min-h-screen flex-col items-center p-8 ">
       <AnimatedText text="Passion Fuels Purpose" className="mb-16 text-8xl" />
@@ -79,7 +77,12 @@ const page = () => {
       </div>
 
       <Skills />
-      <Experience />
+      <Timeline isExperience label="Experience" experience={experiencesText} />
+      <Timeline
+        isExperience={false}
+        label="Education"
+        education={educationText}
+      />
     </main>
   );
 };
