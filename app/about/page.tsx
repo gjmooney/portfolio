@@ -1,44 +1,10 @@
-"use client";
-
-import AnimatedText from "@/components/AnimatedText";
+import AnimatedNumber from "@/components/animations/AnimatedNumber";
+import AnimatedText from "@/components/animations/AnimatedText";
 import Experience from "@/components/Experience";
 import Skills from "@/components/Skills";
 import { cn } from "@/lib/utils";
-import {
-  MotionValue,
-  useInView,
-  useMotionValue,
-  useSpring,
-} from "framer-motion";
 import Image from "next/image";
 import profilePic from "public/profile/about-img.jpg";
-import { useEffect, useRef } from "react";
-
-const AnimatedNumber = ({ value }: { value: number }) => {
-  const ref = useRef<HTMLSpanElement>(null);
-
-  const motionValue = useMotionValue<number>(0);
-  const springValue = useSpring(motionValue, {
-    duration: 3000,
-  }) as MotionValue<number>;
-  const isInView = useInView(ref, { once: true });
-
-  useEffect(() => {
-    if (isInView) {
-      motionValue.set(value);
-    }
-  }, [isInView, value, motionValue]);
-
-  useEffect(() => {
-    springValue.on("change", (latest) => {
-      if (ref.current && +latest.toFixed(0) <= value) {
-        ref.current.textContent = latest.toFixed(0);
-      }
-    });
-  }, [springValue, value]);
-
-  return <span ref={ref}>{value}</span>;
-};
 
 const page = () => {
   return (

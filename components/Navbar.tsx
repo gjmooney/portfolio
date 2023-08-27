@@ -1,7 +1,7 @@
 import Link from "next/link";
-import FancyLink from "./FancyLink";
-import Logo from "./Logo";
 import { GithubIcon, LinkedinIcon, TwitterIcon } from "./Icons";
+import Logo from "./Logo";
+import FancyLink from "./animations/FancyLink";
 
 //import { GithubIcon, LinkedinIcon, TwitterIcon } from "lucide-react";
 
