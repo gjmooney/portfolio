@@ -3,6 +3,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Footer from "@/components/Footer";
+import { ThemeProvider } from "@/components/ThemeProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,11 +22,13 @@ export default function RootLayout({
       lang="en"
       className={`bg-background text-foreground antialiased ${inter.className}`}
     >
-      <body className="min-h-screen w-full bg-secondary">
-        <Navbar />
-        <div className="container">{children}</div>
-        <Footer />
-      </body>
+      <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        <body className="min-h-screen w-full bg-secondary">
+          <Navbar />
+          <div className="container">{children}</div>
+          <Footer />
+        </body>
+      </ThemeProvider>
     </html>
   );
 }

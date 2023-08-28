@@ -3,10 +3,12 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 
+//TODO: Get bg color working with dark mode
+
 const Logo = ({}) => {
   return (
     <motion.div
-      className="mt-2 rounded-full bg-primary "
+      className="mt-2 rounded-full bg-primary"
       whileHover={{
         backgroundColor: [
           "#0F172A",

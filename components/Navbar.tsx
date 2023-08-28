@@ -2,9 +2,11 @@ import Link from "next/link";
 import { GithubIcon, LinkedinIcon, TwitterIcon } from "./Icons";
 import Logo from "./Logo";
 import FancyLink from "./animations/FancyLink";
+import { ModeToggle } from "./ModeToggle";
 
 //import { GithubIcon, LinkedinIcon, TwitterIcon } from "lucide-react";
 
+// TODO: fix right hand icon spacing
 const Navbar = ({}) => {
   return (
     <header className="flex w-full items-center justify-between px-32 py-8 font-medium">
@@ -19,7 +21,7 @@ const Navbar = ({}) => {
         <Logo />
       </div>
 
-      <nav className="flex items-center justify-center ">
+      <nav className="flex items-center justify-center">
         <Link href="/" target="_" className="icon-hover">
           <GithubIcon />
         </Link>
@@ -29,6 +31,7 @@ const Navbar = ({}) => {
         <Link href="/" target="_" className="icon-hover">
           <LinkedinIcon />
         </Link>
+        <ModeToggle />
       </nav>
     </header>
   );
