@@ -8,7 +8,7 @@ import heroPic from "public/profile/hero-img.png";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen w-full items-center p-8">
+    <main className="my-16 flex w-full flex-col items-center justify-center">
       <div className="flex w-full items-center justify-between">
         <div className="w-1/2">
           <Image src={heroPic} alt="profile picture" />
