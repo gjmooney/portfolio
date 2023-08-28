@@ -123,3 +123,23 @@ export const educationText = [
     ],
   },
 ];
+
+// TODO: update with clients info
+export const projectText = [
+  {
+    title: "Crypto Screener Application",
+    summary:
+      "A feature-rich Crypto Screener App using React, Tailwind CSS, Context API, React Router and Recharts. It shows detail regarding almost all the cryptocurrency. You can easily convert the price in your local currency.",
+    type: "Featured Project",
+    link: "/",
+    github: "/",
+  },
+  {
+    title: "React Portfolio Website",
+    summary:
+      "A professional portfolio website using React JS, Framer-motion, and Styled-components. It has smooth page transitions, cool background effects, unique design and it is mobile responsive.",
+    type: "Featured Project",
+    link: "/",
+    github: "/",
+  },
+];

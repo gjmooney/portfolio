@@ -1,5 +1,6 @@
 "use client";
 
+import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 
 interface AnimatedTextProps {
@@ -35,7 +36,10 @@ const AnimatedText = ({ text, className }: AnimatedTextProps) => {
   return (
     <div className="mx-auto py-2">
       <motion.h1
-        className={`inline-block font-bold capitalize ${className}`}
+        className={cn(
+          "inline-block text-center text-8xl font-bold capitalize",
+          className,
+        )}
         variants={header}
         initial="initial"
         animate="animate"

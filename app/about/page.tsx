@@ -10,8 +10,8 @@ import profilePic from "public/profile/about-img.jpg";
 const page = () => {
   return (
     <main className="flex min-h-screen flex-col items-center p-8 ">
-      <AnimatedText text="Passion Fuels Purpose" className="mb-16 text-8xl" />
-      <div className="z-0 grid w-full grid-cols-8 gap-16">
+      <AnimatedText text="Passion Fuels Purpose" className="" />
+      <div className="z-0 mt-16 grid w-full grid-cols-8 gap-16">
         <div className="col-span-3 flex flex-col items-start justify-start">
           <h2 className="mb-4 text-lg font-bold uppercase text-primary/75">
             Biography

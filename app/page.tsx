@@ -16,7 +16,7 @@ export default function Home() {
         <div className="flex w-1/2 flex-col items-end self-center">
           <AnimatedText
             text="Turning Vision Into Reality With Code And Design."
-            className="text-6xl"
+            className="text-left text-6xl"
           />
           <p className="my-4 font-medium">
             As a skilled full-stack developer, I am dedicated to turning ideas
