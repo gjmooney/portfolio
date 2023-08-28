@@ -38,7 +38,11 @@ const FeaturedProject = ({
         target="_blank"
         className="w-1/2 cursor-pointer overflow-hidden rounded-lg"
       >
-        <Image src={CryptoThing} alt={title} className="h-auto w-full" />
+        <Image
+          src={CryptoThing}
+          alt={title}
+          className="h-auto w-full duration-300 ease-in-out hover:scale-105"
+        />
       </Link>
 
       <div className="flex w-1/2 flex-col items-start justify-between pl-6">
@@ -82,7 +86,11 @@ const Project = ({ type, title, image, link, github }: ProjectProps) => {
         target="_blank"
         className="w-full cursor-pointer overflow-hidden rounded-lg"
       >
-        <Image src={CryptoThing} alt={title} className="h-auto w-full" />
+        <Image
+          src={CryptoThing}
+          alt={title}
+          className="h-auto w-full duration-300 ease-in-out hover:scale-105"
+        />
       </Link>
 
       <div className="mt-4 flex w-full flex-col items-start justify-between">
