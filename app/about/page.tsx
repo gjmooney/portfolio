@@ -9,7 +9,7 @@ import profilePic from "public/profile/about-img.jpg";
 
 const page = () => {
   return (
-    <main className="flex min-h-screen flex-col items-center p-8 ">
+    <main className="my-16 flex w-full flex-col items-center justify-center">
       <AnimatedText text="Passion Fuels Purpose" className="" />
       <div className="z-0 mt-16 grid w-full grid-cols-8 gap-16">
         <div className="col-span-3 flex flex-col items-start justify-start">

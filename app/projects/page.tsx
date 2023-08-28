@@ -116,7 +116,7 @@ const page = () => {
   const regProject = projectText[1];
 
   return (
-    <main className="mb-16 flex w-full flex-col items-center justify-center">
+    <main className="my-16 flex w-full flex-col items-center justify-center">
       <AnimatedText text="Imagination trumps knowledge!" className="" />
       <div className="z-0 mt-16 grid grid-cols-12 gap-24 gap-y-32">
         <div className="col-span-12">
