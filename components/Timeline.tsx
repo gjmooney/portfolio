@@ -26,7 +26,7 @@ const Timeline = ({ label, textArray }: TimelineProps) => {
       <div className="relative mx-auto w-[75%]" ref={ref}>
         <motion.div
           style={{ scaleY: scrollYProgress }}
-          className="absolute left-9 top-0 h-full w-[4px] origin-top bg-primary"
+          className="absolute left-9 top-1 h-full w-[4px] origin-top bg-primary"
         />
 
         <ul className="flex flex-col items-start justify-between">
