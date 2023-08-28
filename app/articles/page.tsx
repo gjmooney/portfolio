@@ -1,4 +1,4 @@
-import { featuredArticles } from "@/Text/TextBlurbs";
+import { allArticles, featuredArticles } from "@/Text/TextBlurbs";
 import AnimatedText from "@/components/animations/AnimatedText";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
@@ -9,7 +9,7 @@ interface FeaturedArticleProps {
   img?: StaticImageData;
   title: string;
   time: string;
-  summary: string;
+  summary?: string;
   link: string;
 }
 
@@ -41,6 +41,26 @@ const FeaturedArticle = ({
     </div>
   );
 };
+
+const Article = ({
+  img,
+  title,
+  time,
+
+  link,
+}: FeaturedArticleProps) => {
+  return (
+    <li className="relative my-4 flex w-full items-center justify-between rounded-xl border border-b-4 border-r-4 border-primary p-4 py-6 first:mt-0 last:mb-0">
+      <Link href={link} target="_blank">
+        <h2 className="text-xl font-semibold capitalize hover:underline">
+          {title}
+        </h2>
+      </Link>
+      <span className="pl-4 font-semibold  text-pastel-purple">{time}</span>
+    </li>
+  );
+};
+
 const page = () => {
   return (
     <main className="my-16 flex w-full flex-col items-center justify-center">
@@ -57,8 +77,21 @@ const page = () => {
               img={articleImg1}
             />
           ))}
-          <li>two</li>
         </div>
+
+        <h2 className="mb-8 mt-16 w-full text-center text-4xl font-bold">
+          All Articles
+        </h2>
+        <ul>
+          {allArticles.map((article, index) => (
+            <Article
+              link={article.link}
+              time={article.time}
+              title={article.title}
+              key={index}
+            />
+          ))}
+        </ul>
       </div>
     </main>
   );

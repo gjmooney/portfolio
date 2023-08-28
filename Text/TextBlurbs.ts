@@ -166,18 +166,34 @@ export const allArticles = [
   {
     title:
       "Form Validation In Reactjs: Build A Reusable Custom Hook For Inputs And Error Handling",
+    time: "August 22nd, 2023",
+    link: "/",
   },
   {
     title:
       "Silky Smooth Scrolling In Reactjs: A Step-By-Step Guide For React Developers",
+    time: "March 22nd, 2023",
+    link: "/",
   },
   {
     title:
       "Creating An Efficient Modal Component In React Using Hooks And Portals",
+    time: "January 22nd, 2023",
+    link: "/",
   },
   {
     title: "Build A Fabulous Todo List App With React, Redux And Framer-Motion",
+    time: "February 22nd, 2023",
+    link: "/",
   },
-  { title: "Redux Simplified: A Beginner's Guide For Web Developers" },
-  { title: "What Is Higher Order Component (Hoc) In React?" },
+  {
+    title: "Redux Simplified: A Beginner's Guide For Web Developers",
+    time: "December 22nd, 2023",
+    link: "/",
+  },
+  {
+    title: "What Is Higher Order Component (Hoc) In React?",
+    time: "April 22nd, 2023",
+    link: "/",
+  },
 ];
