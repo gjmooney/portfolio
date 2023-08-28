@@ -26,7 +26,13 @@ const FeaturedProject = ({
   github,
 }: ProjectProps) => {
   return (
-    <article className="flex w-full items-center justify-between rounded-3xl border border-primary bg-secondary p-9 shadow-2xl">
+    <article className="relative flex h-max w-full items-center justify-between rounded-3xl border border-primary bg-secondary p-9">
+      <div
+        className={cn(
+          "absolute -right-3 top-0 -z-10  h-[103%] w-[101%] rounded-[2.5rem] bg-primary",
+          "rounded-br-3xl",
+        )}
+      />
       <Link
         href={link}
         target="_blank"
@@ -65,6 +71,12 @@ const FeaturedProject = ({
 const Project = ({ type, title, image, link, github }: ProjectProps) => {
   return (
     <article className="relative flex w-full flex-col items-center justify-center rounded-2xl border border-primary bg-secondary p-6">
+      <div
+        className={cn(
+          "absolute -right-3 top-0 -z-10  h-[103%] w-[101%] rounded-[2rem] bg-primary",
+          "rounded-br-2xl",
+        )}
+      />
       <Link
         href={link}
         target="_blank"
@@ -106,7 +118,7 @@ const page = () => {
   return (
     <main className="mb-16 flex w-full flex-col items-center justify-center">
       <AnimatedText text="Imagination trumps knowledge!" className="" />
-      <div className="mt-16 grid grid-cols-12 gap-24">
+      <div className="z-0 mt-16 grid grid-cols-12 gap-24 gap-y-32">
         <div className="col-span-12">
           <FeaturedProject
             github={fp1.github}
