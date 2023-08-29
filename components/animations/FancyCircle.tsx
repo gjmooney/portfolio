@@ -26,7 +26,7 @@ const FancyCircle = ({ text, className }: FancyCircleProps) => {
         transition: { duration: 3, repeat: Infinity },
       }}
       className={cn(
-        "flex items-center justify-center rounded-full border-2 border-transparent bg-[#0F172A] text-[#F8FAFC] hover:text-[#0F172A] dark:border-primary",
+        "flex items-center justify-center rounded-full border border-transparent bg-[#0F172A] text-[#F8FAFC] hover:text-[#0F172A] dark:border-primary md:border-2",
         className,
       )}
     >
