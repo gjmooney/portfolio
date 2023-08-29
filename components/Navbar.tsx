@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { GithubIcon, LinkedinIcon, TwitterIcon } from "./Icons";
-import Logo from "./Logo";
-import FancyLink from "./animations/FancyLink";
+import FancyCircle from "./animations/FancyCircle";
 import { ModeToggle } from "./ModeToggle";
+import FancyLink from "./animations/FancyLink";
 
 //import { GithubIcon, LinkedinIcon, TwitterIcon } from "lucide-react";
 
@@ -18,7 +18,7 @@ const Navbar = ({}) => {
       </nav>
 
       <div className="absolute left-[50%] translate-x-[-50%]">
-        <Logo />
+        <FancyCircle text="GM" className="mt-2 h-16 w-16 text-2xl font-bold" />
       </div>
 
       <nav className="flex items-center justify-center">

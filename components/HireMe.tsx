@@ -1,11 +1,13 @@
 "use client";
 
-import Link from "next/link";
-import { CircularText } from "./Icons";
-import Image from "next/image";
 import { motion } from "framer-motion";
+import Image from "next/image";
+import Link from "next/link";
+import FancyCircle from "./animations/FancyCircle";
 
 const MotionLink = motion(Link);
+
+// TODO: Use SVG instead of image
 const HireMe = () => {
   return (
     <div className="fixed bottom-11 right-4 flex items-center justify-center overflow-hidden">
@@ -17,23 +19,10 @@ const HireMe = () => {
           width={196}
           height={196}
         />
-        <MotionLink
-          href="/"
-          whileHover={{
-            backgroundColor: [
-              "#0F172A",
-              "#F7D8B9",
-              "#AEC9E0",
-              "#F2B2A8",
-              "#D9D9D9",
-              "#0F172A",
-            ],
-            transition: { duration: 3, repeat: Infinity },
-          }}
-          className="absolute left-1/2 top-1/2 flex h-20 w-20 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-2 border-solid border-primary bg-primary font-semibold text-primary-foreground shadow-md hover:border-primary hover:bg-primary-foreground hover:text-primary"
-        >
-          Hire Me
-        </MotionLink>
+        <FancyCircle
+          text="Hire Me"
+          className="absolute left-1/2 top-1/2 h-24 w-24 -translate-x-1/2 -translate-y-1/2 text-lg font-semibold"
+        />
       </div>
     </div>
   );
