@@ -25,7 +25,7 @@ export default function RootLayout({
       <body className="flex min-h-screen w-full flex-col bg-secondary">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Navbar />
-          <div className="container flex-1">{children}</div>
+          <div className="container flex-auto">{children}</div>
           <Footer />
         </ThemeProvider>
       </body>
