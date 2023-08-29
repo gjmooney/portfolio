@@ -1,6 +1,6 @@
 import { motion, spring } from "framer-motion";
 import { useRef } from "react";
-import ListItemIcon from "../ListItemIcon";
+import ListItemIcon from "./ListItemIcon";
 
 export interface DetailsProps {
   title: string;

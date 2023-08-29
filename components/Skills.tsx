@@ -7,16 +7,17 @@ interface SkillProps {
   x: string;
   y: string;
 }
+
+// TODO: make sure circles don't render weird in prod
 const Skill = ({ name, x, y }: SkillProps) => {
   return (
     <motion.div
-      className="absolute flex h-24 w-24 cursor-pointer items-center justify-center rounded-full bg-primary px-6 py-3 font-semibold text-primary-foreground shadow-primary first:h-20 first:w-20"
+      className="absolute flex h-24 w-24 cursor-pointer items-center justify-center rounded-full bg-primary px-6 py-3 font-semibold text-primary-foreground shadow-primary"
       whileHover={{
         scale: 1.05,
       }}
       initial={{ x: 0, y: 0, opacity: 0 }}
-      whileInView={{ x, y, opacity: 1 }}
-      transition={{ duration: 1.5 }}
+      whileInView={{ x, y, opacity: 1, transition: { duration: 1.5 } }}
       viewport={{ once: true }}
     >
       {name}
@@ -28,8 +29,11 @@ const Skills = () => {
   return (
     <>
       <h2 className="mt-32 w-full text-center text-8xl font-bold">Skills</h2>
-      <div className="bg-circularLight relative flex h-screen w-full items-center justify-center rounded-full">
-        <Skill name="Web" x="0vw" y="0vw" />
+      <div className="bg-circular relative flex h-screen w-full items-center justify-center rounded-full">
+        <div className="flex h-20 w-20 cursor-pointer items-center justify-center rounded-full bg-primary px-6 py-3 font-semibold text-primary-foreground shadow-primary duration-700 hover:scale-110">
+          Web
+        </div>
+        {/* <Skill name="Web" x="0vw" y="0vw" /> */}
         <Skill name="CSS" x="-20vw" y="2vw" />
         <Skill name="HTML" x="0vw" y="12vw" />
         <Skill name="TypeScript" x="-24vw" y="-18vw" />

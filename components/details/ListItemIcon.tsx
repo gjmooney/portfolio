@@ -28,13 +28,13 @@ const ListItemIcon = ({ reference }: ListItemIconProps) => {
           style={{
             pathLength: scrollYProgress,
           }}
-          className="fill-primary-foreground stroke-primary stroke-[4px]"
+          className="fill-secondary stroke-primary stroke-[4px]"
         />
         <circle
           cx="75"
           cy="50"
           r="10"
-          className="animate-pulse fill-pastel-purple stroke-primary stroke-2"
+          className="animate-pulse fill-pastel-purple stroke-secondary stroke-2"
         />
       </svg>
     </figure>
