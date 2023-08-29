@@ -8,10 +8,12 @@ import FancyLink from "./animations/FancyLink";
 //import { GithubIcon, LinkedinIcon, TwitterIcon } from "lucide-react";
 
 // TODO: fix right hand icon spacing
+// TODO: use a sheet for the mobile menu
+
 const Navbar = ({}) => {
   return (
-    <header className="relative flex w-full items-center justify-between px-32 py-8 font-medium">
-      <HamburgerIcon className="flex flex-col items-center justify-center md:hidden" />
+    <header className="relative flex w-full items-center justify-between py-8 font-medium md:px-32">
+      <HamburgerIcon className="flex flex-col items-center justify-center px-8 md:hidden" />
 
       <nav className="hidden items-center justify-between md:flex">
         <FancyLink title="Home" href="/" className="mr-4" />
@@ -38,7 +40,7 @@ const Navbar = ({}) => {
       </nav>
 
       {/** Pop up menu for mobile*/}
-      <div className="fixed left-1/2 top-1/2 z-30 flex min-w-[70vw] -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-between rounded-lg bg-primary/75 py-32 text-secondary backdrop-blur-md">
+      {/* <div className="fixed left-1/2 top-1/2 z-30 flex min-w-[70vw] -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-between rounded-lg bg-primary/75 py-32 text-secondary backdrop-blur-md">
         <nav className="flex flex-col items-center justify-center">
           <FancyLink title="Home" href="/" mobile={true} />
           <FancyLink title="About" href="/about" mobile={true} />
@@ -57,7 +59,7 @@ const Navbar = ({}) => {
           </Link>
           <ModeToggle />
         </nav>
-      </div>
+      </div> */}
     </header>
   );
 };

@@ -37,7 +37,7 @@ const AnimatedText = ({ text, className }: AnimatedTextProps) => {
     <div className="mx-auto py-2">
       <motion.h1
         className={cn(
-          "inline-block text-center text-8xl font-bold capitalize",
+          "inline-block text-center text-5xl font-bold capitalize md:text-8xl",
           className,
         )}
         variants={header}
