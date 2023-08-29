@@ -22,13 +22,13 @@ export default function RootLayout({
       lang="en"
       className={`bg-background text-foreground antialiased ${inter.className}`}
     >
-      <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-        <body className="min-h-screen w-full bg-secondary">
+      <body className="min-h-screen w-full bg-secondary">
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Navbar />
           <div className="container">{children}</div>
           <Footer />
-        </body>
-      </ThemeProvider>
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
