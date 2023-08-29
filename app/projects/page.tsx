@@ -41,6 +41,7 @@ const FeaturedProject = ({
         <Image
           src={CryptoThing}
           alt={title}
+          priority
           className="h-auto w-full duration-300 ease-in-out hover:scale-105"
         />
       </Link>

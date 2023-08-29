@@ -66,6 +66,7 @@ const MovingImage = ({ title, img, link }: MovingImageProps) => {
         ref={imgRef}
         src={img}
         alt={title}
+        priority
         className="absolute z-10 hidden h-auto w-96 rounded-lg"
       />
     </Link>

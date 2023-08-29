@@ -11,7 +11,7 @@ export default function Home() {
     <main className="my-16 flex w-full flex-col items-center justify-center">
       <div className="flex w-full items-center justify-between">
         <div className="w-1/2">
-          <Image src={heroPic} alt="profile picture" />
+          <Image src={heroPic} alt="profile picture" priority />
         </div>
         <div className="flex w-1/2 flex-col items-end self-center">
           <AnimatedText

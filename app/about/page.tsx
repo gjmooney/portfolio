@@ -43,7 +43,12 @@ const page = () => {
               "rounded-br-2xl",
             )}
           />
-          <Image src={profilePic} alt="profile pic" className=" rounded-2xl" />
+          <Image
+            src={profilePic}
+            alt="profile pic"
+            priority
+            className="rounded-2xl"
+          />
         </div>
 
         <div className="col-span-2 flex flex-col items-end justify-between">
