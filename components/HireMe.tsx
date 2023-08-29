@@ -11,7 +11,7 @@ const MotionLink = motion(Link);
 // TODO: Use SVG instead of image
 const HireMe = () => {
   return (
-    <div className="fixed right-0 top-0 flex items-center justify-center overflow-hidden md:bottom-11 md:right-4 md:top-auto">
+    <div className="fixed right-0 top-0 flex items-center justify-center overflow-hidden md:bottom-20 md:right-4 md:top-auto">
       <div className="relative flex h-auto w-24 items-center md:w-48">
         <Image
           className="h-auto w-[110%] animate-spin-slow"

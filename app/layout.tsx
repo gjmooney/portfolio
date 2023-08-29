@@ -22,10 +22,10 @@ export default function RootLayout({
       lang="en"
       className={`bg-background text-foreground antialiased ${inter.className}`}
     >
-      <body className="min-h-screen w-full bg-secondary">
+      <body className="flex min-h-screen w-full flex-col bg-secondary">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Navbar />
-          <div className="container">{children}</div>
+          <div className="container flex-1">{children}</div>
           <Footer />
         </ThemeProvider>
       </body>
