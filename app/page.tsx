@@ -23,7 +23,7 @@ export default function Home() {
             into innovative web applications. Explore my latest projects and
             articles, showcasing my expertise in React.js and web development.
           </p>
-          <div className="mt-2 flex items-center gap-4 self-start ">
+          <div className="mt-2 flex items-center gap-4 self-start 2xl:inline-block">
             <Link
               href="/resume.pdf"
               target="_blank"
