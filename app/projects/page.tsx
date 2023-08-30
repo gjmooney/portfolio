@@ -26,17 +26,17 @@ const FeaturedProject = ({
   github,
 }: ProjectProps) => {
   return (
-    <article className="relative flex h-max w-full items-center justify-between rounded-3xl border border-primary bg-secondary p-9">
+    <article className="relative flex h-max w-full flex-col items-center justify-between rounded-3xl border border-primary bg-secondary p-9 md:flex-row">
       <div
         className={cn(
-          "absolute -right-3 top-0 -z-10  h-[103%] w-[101%] rounded-[2.5rem] bg-primary",
+          "absolute -right-3 top-0 -z-10 h-[102%] w-[101%] rounded-[2.5rem] bg-primary md:h-[103%]",
           "rounded-br-3xl",
         )}
       />
       <Link
         href={link}
         target="_blank"
-        className="w-1/2 cursor-pointer overflow-hidden rounded-lg"
+        className="cursor-pointer overflow-hidden rounded-lg md:w-1/2"
       >
         <Image
           src={CryptoThing}
@@ -46,7 +46,7 @@ const FeaturedProject = ({
         />
       </Link>
 
-      <div className="flex w-1/2 flex-col items-start justify-between pl-6">
+      <div className="flex flex-col items-start justify-between md:w-1/2 md:pl-6">
         <span className="text-xl font-medium text-pastel-purple">{type}</span>
         {/* //TODO: Make this underline thicker? */}
         <FancyLink
@@ -127,8 +127,8 @@ const page = () => {
   return (
     <main className="my-16 flex w-full flex-col items-center justify-center">
       <AnimatedText text="Imagination trumps knowledge!" className="" />
-      <div className="z-0 mt-16 grid grid-cols-12 gap-24 gap-y-32">
-        <div className="col-span-12">
+      <div className="z-0 mt-16 grid gap-24 gap-y-32 md:grid-cols-12">
+        <div className=" md:col-span-12">
           <FeaturedProject
             github={fp1.github}
             link={fp1.link}
@@ -138,7 +138,7 @@ const page = () => {
             image=""
           />
         </div>
-        <div className="col-span-6">
+        <div className=" md:col-span-6">
           <Project
             github={regProject.github}
             link={regProject.link}
@@ -148,7 +148,7 @@ const page = () => {
             image=""
           />
         </div>
-        <div className="col-span-6">
+        <div className=" md:col-span-6">
           <Project
             github={regProject.github}
             link={regProject.link}
@@ -158,7 +158,7 @@ const page = () => {
             image=""
           />
         </div>
-        <div className="col-span-12">
+        <div className=" md:col-span-12">
           <FeaturedProject
             github={fp1.github}
             link={fp1.link}
@@ -168,7 +168,7 @@ const page = () => {
             image=""
           />
         </div>
-        <div className="col-span-6">
+        <div className=" md:col-span-6">
           <Project
             github={regProject.github}
             link={regProject.link}
@@ -178,7 +178,7 @@ const page = () => {
             image=""
           />
         </div>
-        <div className="col-span-6">
+        <div className=" md:col-span-6">
           <Project
             github={regProject.github}
             link={regProject.link}

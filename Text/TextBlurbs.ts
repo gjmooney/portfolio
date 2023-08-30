@@ -138,7 +138,7 @@ export const projectText = [
     title: "React Portfolio Website",
     summary:
       "A professional portfolio website using React JS, Framer-motion, and Styled-components. It has smooth page transitions, cool background effects, unique design and it is mobile responsive.",
-    type: "Featured Project",
+    type: "Web Project",
     link: "/",
     github: "/",
   },
