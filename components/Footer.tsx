@@ -2,11 +2,11 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="flex items-center justify-between border-t-2 border-solid border-primary p-8 text-lg font-medium">
+    <footer className="flex flex-col items-center justify-between border-t-2 border-solid border-primary p-8 text-lg font-medium md:flex-row">
       <span className="">
         {new Date().getFullYear()} &copy; All Rights Reserved.
       </span>
-      <div className="flex items-center">
+      <div className="flex items-center py-2 md:py-0">
         Built with&nbsp;
         <span className="text-2xl text-[#F2B2A8]">&#9825;</span>
         &nbsp;by&nbsp;
