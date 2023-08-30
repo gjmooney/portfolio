@@ -111,10 +111,10 @@ const FeaturedArticle = ({
 const Article = ({ img, title, time, link }: FeaturedArticleProps) => {
   return (
     <motion.li
-      /* initial={{ y: 200, opacity: 0 }}
+      initial={{ y: 200, opacity: 0 }}
       whileInView={{ y: 0, opacity: 1 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.5, ease: "easeIn" }} */
+      transition={{ duration: 0.5, ease: "easeIn" }}
       className="relative my-4 flex w-full flex-col justify-between rounded-xl border border-b-4 border-r-4 border-primary p-4 py-6 transition first:mt-0 last:mb-0 md:flex-row"
     >
       <MovingImage title={title} link={link} img={img} />

@@ -12,7 +12,7 @@ import FancyLink from "./animations/FancyLink";
 
 const Navbar = ({}) => {
   return (
-    <header className="relative flex w-full items-center justify-between border border-b-primary/40 py-8 font-medium md:px-32">
+    <header className="relative flex w-full items-center justify-between border py-8 font-medium md:border-b-primary/40 md:px-32">
       <HamburgerIcon className="flex flex-col items-center justify-center px-8 md:hidden" />
 
       <nav className="hidden items-center justify-between md:flex">
