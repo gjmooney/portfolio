@@ -28,8 +28,8 @@ const Project = ({
   return (
     <article
       className={cn(
-        "relative flex w-full flex-col items-center justify-center border border-primary bg-secondary",
-        summary ? "rounded-3xl p-9 md:flex-row" : "rounded-2xl p-6",
+        "relative flex w-full flex-col items-center justify-center border border-primary bg-secondary p-6",
+        summary ? "rounded-3xl md:flex-row md:p-9" : "rounded-2xl",
       )}
     >
       <div
@@ -45,7 +45,7 @@ const Project = ({
         href={link}
         target="_blank"
         className={cn(
-          "cursor-pointer overflow-hidden rounded-lg",
+          "flex cursor-pointer flex-col gap-2 overflow-hidden rounded-lg",
           summary ? "md:w-1/2" : "w-full",
         )}
       >
@@ -53,8 +53,11 @@ const Project = ({
           src={CryptoThing}
           alt={title}
           priority
-          className="h-auto w-full duration-300 ease-in-out hover:scale-105"
+          className="order-2 h-auto w-full duration-300 ease-in-out hover:scale-105 md:order-1"
         />
+        <span className="order-1 text-sm font-medium text-pastel-purple md:order-2 md:text-xl">
+          {type}
+        </span>
       </Link>
 
       <div
@@ -63,16 +66,13 @@ const Project = ({
           summary ? "md:w-1/2" : "mt-4 w-full",
         )}
       >
-        <span className="text-sm font-medium text-pastel-purple md:text-xl">
-          {type}
-        </span>
         {/* //TODO: Make this underline thicker? */}
         <FancyLink
           href={link}
           title={title}
           className={cn(
-            "my-2 w-full text-left text-2xl font-bold",
-            summary ? "md:text-4xl" : "md:text-3xl",
+            "my-2 w-full text-center  font-bold md:text-left",
+            summary ? "text-3xl md:text-4xl" : "text-2xl md:text-3xl",
           )}
         />
 
@@ -94,7 +94,7 @@ const Project = ({
           <Link
             href={link}
             target="_blank"
-            className={cn(buttonVariants(), !summary ? "ml-0" : "ml-4")}
+            className={cn(buttonVariants(), summary ? "ml-4" : "ml-0")}
           >
             {summary ? "Visit Project" : "Visit"}
           </Link>
@@ -182,7 +182,6 @@ const page = () => {
           <Project
             github={regProject.github}
             link={regProject.link}
-            summary={regProject.summary}
             title={regProject.title}
             type={regProject.type}
             image=""
@@ -202,7 +201,6 @@ const page = () => {
           <Project
             github={regProject.github}
             link={regProject.link}
-            summary={regProject.summary}
             title={regProject.title}
             type={regProject.type}
             image=""
@@ -212,7 +210,6 @@ const page = () => {
           <Project
             github={regProject.github}
             link={regProject.link}
-            summary={regProject.summary}
             title={regProject.title}
             type={regProject.type}
             image=""
