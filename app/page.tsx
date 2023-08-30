@@ -14,7 +14,7 @@ export default function Home() {
         <div className="w-full md:w-1/2">
           <AnimatedText
             text="Turning Vision Into Reality With Code And Design."
-            className="md:hidden md:text-left md:text-6xl"
+            className="md:hidden"
           />
           <Image src={heroPic} alt="profile picture" priority />
         </div>

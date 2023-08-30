@@ -11,9 +11,9 @@ const page = () => {
   return (
     <main className="my-16 flex w-full flex-col items-center justify-center">
       <AnimatedText text="Passion Fuels Purpose" className="" />
-      <div className="z-0 mt-16 grid w-full grid-cols-8 gap-16">
-        <div className="col-span-3 flex flex-col items-start justify-start">
-          <h2 className="mb-4 text-lg font-bold uppercase text-primary/75">
+      <div className="z-0 mt-16 grid w-full grid-cols-1 gap-y-16 md:grid-cols-8 md:gap-16">
+        <div className="col-span-1 flex flex-col items-start justify-start md:col-span-3">
+          <h2 className="mb-4 text-xl font-bold uppercase text-primary/75">
             Biography
           </h2>
           <p className="font-medium">
@@ -36,7 +36,7 @@ const page = () => {
           </p>
         </div>
 
-        <div className="relative col-span-3 h-max rounded-2xl border-2 border-solid border-primary bg-secondary p-6">
+        <div className="relative col-span-1 h-max rounded-2xl border-2 border-solid border-primary bg-secondary p-6 md:col-span-3">
           <div
             className={cn(
               "absolute -right-3 top-0 -z-10 h-[103%] w-[102%] rounded-[2rem] bg-primary",
@@ -51,32 +51,30 @@ const page = () => {
           />
         </div>
 
-        <div className="col-span-2 flex flex-col items-end justify-between">
-          <div className="flex flex-col items-end justify-center">
-            <span className="inline-block text-7xl font-bold">
+        {/** numbers container */}
+        <div className="col-span-1 flex items-end justify-between gap-5 text-xl font-medium capitalize text-primary/75 md:col-span-2 md:flex-col md:gap-0">
+          {/** first number */}
+          <div className="flex flex-col items-center justify-center md:items-end">
+            <span className="inline-block text-5xl font-bold md:text-7xl">
               <AnimatedNumber value={50} />+
             </span>
-            <h2 className="text-xl font-medium capitalize text-primary/75">
-              satisfied clients
-            </h2>
+            <h2 className="text-center md:text-right">satisfied clients</h2>
           </div>
 
-          <div className="flex flex-col items-end justify-center">
-            <span className="inline-block text-7xl font-bold">
+          {/** second number */}
+          <div className="flex flex-col items-center justify-center md:items-end">
+            <span className="inline-block text-5xl font-bold md:text-7xl">
               <AnimatedNumber value={40} />+
             </span>
-            <h2 className="text-xl font-medium capitalize text-primary/75">
-              projects completed
-            </h2>
+            <h2 className="text-center md:text-right">projects completed</h2>
           </div>
 
-          <div className="flex flex-col items-end justify-center">
-            <span className="inline-block text-7xl font-bold">
+          {/** third number */}
+          <div className="flex flex-col items-center justify-center md:items-end">
+            <span className="inline-block text-5xl font-bold md:text-7xl">
               <AnimatedNumber value={4} />+
             </span>
-            <h2 className="text-xl font-medium capitalize text-primary/75">
-              years of experience
-            </h2>
+            <h2 className="text-center md:text-right">years of experience</h2>
           </div>
         </div>
       </div>
