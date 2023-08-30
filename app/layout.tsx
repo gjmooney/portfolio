@@ -33,9 +33,7 @@ export default function RootLayout({
           <Navbar />
           <div className="container flex-auto">
             <Transition />
-            <AnimatePresence mode="wait" key={pathname}>
-              {children}
-            </AnimatePresence>
+            {children}
           </div>
           <Footer />
         </ThemeProvider>
