@@ -79,6 +79,8 @@ module.exports = {
       backgroundImage: {
         circular:
           "repeating-radial-gradient(hsl(var(--foreground)) -1px, hsl(var(--secondary)) 10px, hsl(var(--secondary)) 120px)",
+        circularMobile:
+          "repeating-radial-gradient(circle, hsl(var(--foreground)) -1px, hsl(var(--secondary)) 8px, hsl(var(--secondary)) 50px)",
       },
       /* screens: {
         "2xl": { max: "1535px" },
