@@ -14,7 +14,10 @@ const ListItemIcon = ({ reference }: ListItemIconProps) => {
 
   return (
     <figure className="absolute left-0 stroke-primary">
-      <svg className="-rotate-90" width="75" height="75" viewBox="0 0 100 100">
+      <svg
+        className="h-[60px] w-[60px] -rotate-90 md:h-[75px] md:w-[75px]"
+        viewBox="0 0 100 100"
+      >
         <circle
           cx="76"
           cy="50"
