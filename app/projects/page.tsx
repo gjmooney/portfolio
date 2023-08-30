@@ -158,7 +158,7 @@ const page = () => {
   return (
     <main className="my-16 flex w-full flex-col items-center justify-center">
       <AnimatedText text="Imagination trumps knowledge!" className="" />
-      <div className="z-0 mt-16 grid gap-24 gap-y-32 md:grid-cols-12">
+      <div className="z-0 mt-16 grid gap-20 md:grid-cols-12 md:gap-24 md:gap-y-32">
         <div className=" md:col-span-12">
           <Project
             github={fp1.github}
