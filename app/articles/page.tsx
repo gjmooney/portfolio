@@ -10,6 +10,7 @@ import todoImg from "public/articles/todo.png";
 import { spring, useMotionValue } from "framer-motion";
 import { MouseEvent, useRef } from "react";
 import { motion } from "framer-motion";
+import { cn } from "@/lib/utils";
 
 interface FeaturedArticleProps {
   img: StaticImageData;
@@ -82,22 +83,27 @@ const FeaturedArticle = ({
   link,
 }: FeaturedArticleProps) => {
   const fa1 = featuredArticles[0];
+
   return (
-    <div className="col-span-1 w-full overflow-hidden rounded-2xl border border-primary bg-secondary p-4">
-      <Link href={link} target="_blank" className="cursor-pointer">
-        <div className="overflow-hidden rounded-lg">
-          <Image
-            src={img ?? articleImg1}
-            alt={title}
-            className="rounded-lg duration-300 ease-in-out hover:scale-105"
-          />
-        </div>
-        <h2 className="my-2 text-2xl font-bold capitalize hover:underline">
-          {title}
-        </h2>
-      </Link>
-      <p className="mb-2 text-sm">{summary}</p>
-      <span className="font-semibold text-pastel-purple">{time}</span>
+    <div className="relative z-0">
+      <div className="col-span-1 h-full w-full rounded-2xl border border-primary bg-secondary p-4">
+        <Link href={link} target="_blank" className="cursor-pointer">
+          <div className="overflow-hidden rounded-lg">
+            <Image
+              src={img ?? articleImg1}
+              alt={title}
+              className="rounded-lg duration-300 ease-in-out hover:scale-105"
+            />
+          </div>
+          <h2 className="my-2 text-center text-xl font-bold capitalize hover:underline md:text-left md:text-2xl">
+            {title}
+          </h2>
+        </Link>
+        <p className="mb-2 text-sm">{summary}</p>
+        <span className="font-semibold text-pastel-purple">{time}</span>
+      </div>
+
+      <div className="absolute -right-3 top-0 -z-10 h-[102%] w-[103%] rounded-[2rem] rounded-br-2xl bg-primary md:w-[102%]" />
     </div>
   );
 };
@@ -105,32 +111,34 @@ const FeaturedArticle = ({
 const Article = ({ img, title, time, link }: FeaturedArticleProps) => {
   return (
     <motion.li
-      initial={{ y: 200, opacity: 0 }}
+      /* initial={{ y: 200, opacity: 0 }}
       whileInView={{ y: 0, opacity: 1 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.5, ease: "easeIn" }}
-      className="relative my-4 flex w-full items-center justify-between rounded-xl border border-b-4 border-r-4 border-primary p-4 py-6 transition first:mt-0 last:mb-0"
+      transition={{ duration: 0.5, ease: "easeIn" }} */
+      className="relative my-4 flex w-full flex-col justify-between rounded-xl border border-b-4 border-r-4 border-primary p-4 py-6 transition first:mt-0 last:mb-0 md:flex-row"
     >
       <MovingImage title={title} link={link} img={img} />
-      <span className="pl-4 font-semibold  text-pastel-purple">{time}</span>
+      <span className="text-sm font-semibold text-pastel-purple md:pl-4 md:text-base">
+        {time}
+      </span>
     </motion.li>
   );
 };
 
 const page = () => {
   return (
-    <main className="my-16 flex w-full flex-col items-center justify-center">
+    <main className="my-14 flex w-full flex-col items-center justify-center">
       <AnimatedText text="Words can change the world" />
       <div className="mt-16">
-        <div className="grid grid-cols-2 gap-16">
+        <div className="grid gap-16 md:grid-cols-2">
           {featuredArticles.map((article, index) => (
             <FeaturedArticle
               link={article.link}
               summary={article.summary}
               time={article.time}
               title={article.title}
-              key={index}
               img={articleImg1}
+              key={index}
             />
           ))}
         </div>

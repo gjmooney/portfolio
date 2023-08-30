@@ -34,7 +34,7 @@ const Project = ({
     >
       <div
         className={cn(
-          "absolute -right-3 top-0 -z-10 w-[101%] bg-primary",
+          "absolute -right-3 top-0 -z-10 w-[103%] bg-primary md:w-[101%]",
           summary
             ? "h-[102%] rounded-[2.5rem] rounded-br-3xl md:h-[103%]"
             : " h-[103%] rounded-[2rem] rounded-br-2xl",
@@ -159,7 +159,7 @@ const page = () => {
     <main className="my-16 flex w-full flex-col items-center justify-center">
       <AnimatedText text="Imagination trumps knowledge!" className="" />
       <div className="z-0 mt-16 grid gap-20 md:grid-cols-12 md:gap-24 md:gap-y-32">
-        <div className=" md:col-span-12">
+        <div className="md:col-span-12">
           <Project
             github={fp1.github}
             link={fp1.link}
@@ -169,7 +169,7 @@ const page = () => {
             image=""
           />
         </div>
-        <div className=" md:col-span-6">
+        <div className="md:col-span-6">
           <Project
             github={regProject.github}
             link={regProject.link}
@@ -178,7 +178,7 @@ const page = () => {
             image=""
           />
         </div>
-        <div className=" md:col-span-6">
+        <div className="md:col-span-6">
           <Project
             github={regProject.github}
             link={regProject.link}
@@ -187,7 +187,7 @@ const page = () => {
             image=""
           />
         </div>
-        <div className=" md:col-span-12">
+        <div className="md:col-span-12">
           <Project
             github={fp1.github}
             link={fp1.link}
@@ -197,7 +197,7 @@ const page = () => {
             image=""
           />
         </div>
-        <div className=" md:col-span-6">
+        <div className="md:col-span-6">
           <Project
             github={regProject.github}
             link={regProject.link}
@@ -206,7 +206,7 @@ const page = () => {
             image=""
           />
         </div>
-        <div className=" md:col-span-6">
+        <div className="md:col-span-6">
           <Project
             github={regProject.github}
             link={regProject.link}
