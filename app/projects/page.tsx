@@ -17,7 +17,7 @@ interface ProjectProps {
   github: string;
 }
 
-const FeaturedProject = ({
+const Project = ({
   type,
   title,
   summary,
@@ -26,17 +26,28 @@ const FeaturedProject = ({
   github,
 }: ProjectProps) => {
   return (
-    <article className="relative flex h-max w-full flex-col items-center justify-between rounded-3xl border border-primary bg-secondary p-9 md:flex-row">
+    <article
+      className={cn(
+        "relative flex w-full flex-col items-center justify-center border border-primary bg-secondary",
+        summary ? "rounded-3xl p-9 md:flex-row" : "rounded-2xl p-6",
+      )}
+    >
       <div
         className={cn(
-          "absolute -right-3 top-0 -z-10 h-[102%] w-[101%] rounded-[2.5rem] bg-primary md:h-[103%]",
-          "rounded-br-3xl",
+          "absolute -right-3 top-0 -z-10 w-[101%] bg-primary",
+          summary
+            ? "h-[102%] rounded-[2.5rem] rounded-br-3xl md:h-[103%]"
+            : " h-[103%] rounded-[2rem] rounded-br-2xl",
         )}
       />
+
       <Link
         href={link}
         target="_blank"
-        className="cursor-pointer overflow-hidden rounded-lg md:w-1/2"
+        className={cn(
+          "cursor-pointer overflow-hidden rounded-lg",
+          summary ? "md:w-1/2" : "w-full",
+        )}
       >
         <Image
           src={CryptoThing}
@@ -46,26 +57,46 @@ const FeaturedProject = ({
         />
       </Link>
 
-      <div className="flex flex-col items-start justify-between md:w-1/2 md:pl-6">
-        <span className="text-xl font-medium text-pastel-purple">{type}</span>
+      <div
+        className={cn(
+          "flex flex-col items-start justify-between  md:pl-6",
+          summary ? "md:w-1/2" : "mt-4 w-full",
+        )}
+      >
+        <span className="text-sm font-medium text-pastel-purple md:text-xl">
+          {type}
+        </span>
         {/* //TODO: Make this underline thicker? */}
         <FancyLink
           href={link}
           title={title}
-          className="my-2 w-full text-left text-4xl font-bold"
+          className={cn(
+            "my-2 w-full text-left text-2xl font-bold",
+            summary ? "md:text-4xl" : "md:text-3xl",
+          )}
         />
 
-        <p className="my-2 font-medium">{summary}</p>
-        <div className="mt-2 flex items-center">
+        {summary ? (
+          <p className="my-2 font-medium md:text-lg">{summary}</p>
+        ) : (
+          <></>
+        )}
+
+        <div
+          className={cn(
+            "mt-2 flex items-center",
+            !summary ? "w-full flex-row-reverse justify-between" : "",
+          )}
+        >
           <Link href={github} target="_blank" className="w-10">
             <GithubIcon />
           </Link>
           <Link
             href={link}
             target="_blank"
-            className={cn("ml-4", buttonVariants())}
+            className={cn(buttonVariants(), !summary ? "ml-0" : "ml-4")}
           >
-            Visit Project
+            {summary ? "Visit Project" : "Visit"}
           </Link>
         </div>
       </div>
@@ -73,7 +104,7 @@ const FeaturedProject = ({
   );
 };
 
-const Project = ({ type, title, image, link, github }: ProjectProps) => {
+const OldProject = ({ type, title, image, link, github }: ProjectProps) => {
   return (
     <article className="relative flex w-full flex-col items-center justify-center rounded-2xl border border-primary bg-secondary p-6">
       <div
@@ -129,7 +160,7 @@ const page = () => {
       <AnimatedText text="Imagination trumps knowledge!" className="" />
       <div className="z-0 mt-16 grid gap-24 gap-y-32 md:grid-cols-12">
         <div className=" md:col-span-12">
-          <FeaturedProject
+          <Project
             github={fp1.github}
             link={fp1.link}
             summary={fp1.summary}
@@ -142,7 +173,6 @@ const page = () => {
           <Project
             github={regProject.github}
             link={regProject.link}
-            summary={regProject.summary}
             title={regProject.title}
             type={regProject.type}
             image=""
@@ -159,7 +189,7 @@ const page = () => {
           />
         </div>
         <div className=" md:col-span-12">
-          <FeaturedProject
+          <Project
             github={fp1.github}
             link={fp1.link}
             summary={fp1.summary}
