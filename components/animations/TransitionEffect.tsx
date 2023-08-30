@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 const Transition = () => {
   const pathname = usePathname();
   return (
-    <AnimatePresence initial={false} mode="wait">
+    <AnimatePresence mode="wait" initial={false}>
       <motion.div
         key={pathname}
         initial={{ x: "100%", width: "100%" }}

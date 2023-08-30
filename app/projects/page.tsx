@@ -35,7 +35,7 @@ const Project = ({
         summary ? "rounded-3xl md:flex-row md:p-9" : "rounded-2xl",
       )}
     >
-      <Transition />
+      {/*  <Transition /> */}
 
       <div
         className={cn(
