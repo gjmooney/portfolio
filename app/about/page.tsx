@@ -1,15 +1,20 @@
 import AnimatedNumber from "@/components/animations/AnimatedNumber";
 import AnimatedText from "@/components/animations/AnimatedText";
+import Transition from "@/components/animations/TransitionEffect";
 import Skills from "@/components/Skills";
 import Timeline from "@/components/Timeline";
 import { cn } from "@/lib/utils";
 import { educationText, experiencesText } from "@/Text/TextBlurbs";
+import { AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import { usePathname, useRouter } from "next/navigation";
 import profilePic from "public/profile/about-img.jpg";
 
-const page = () => {
+const Page = () => {
   return (
     <main className="my-16 flex w-full flex-col items-center justify-center">
+      <Transition />
+
       <AnimatedText text="Passion Fuels Purpose" className="" />
       <div className="z-0 mt-16 grid w-full grid-cols-1 gap-y-16 md:grid-cols-8 md:gap-16">
         <div className="col-span-1 flex flex-col items-start justify-start md:col-span-3">
@@ -85,4 +90,4 @@ const page = () => {
     </main>
   );
 };
-export default page;
+export default Page;

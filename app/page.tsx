@@ -1,4 +1,5 @@
 import AnimatedText from "@/components/animations/AnimatedText";
+import Transition from "@/components/animations/TransitionEffect";
 import HireMe from "@/components/HireMe";
 import { LinkArrow } from "@/components/Icons";
 import { buttonVariants } from "@/components/ui/button";

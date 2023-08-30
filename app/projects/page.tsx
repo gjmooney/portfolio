@@ -2,10 +2,13 @@ import { projectText } from "@/Text/TextBlurbs";
 import { GithubIcon } from "@/components/Icons";
 import AnimatedText from "@/components/animations/AnimatedText";
 import FancyLink from "@/components/animations/FancyLink";
+import Transition from "@/components/animations/TransitionEffect";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import CryptoThing from "public/projects/crypto-screener-cover-image.jpg";
 
 interface ProjectProps {
@@ -32,6 +35,8 @@ const Project = ({
         summary ? "rounded-3xl md:flex-row md:p-9" : "rounded-2xl",
       )}
     >
+      <Transition />
+
       <div
         className={cn(
           "absolute -right-3 top-0 -z-10 w-[103%] bg-primary md:w-[101%]",
