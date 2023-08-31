@@ -9,16 +9,15 @@ interface FancyLinkProps {
   href: string;
   title: string;
   className?: string;
-  mobile?: boolean;
 }
 
 const FancyLink = React.forwardRef<HTMLAnchorElement, FancyLinkProps>(
-  (props, ref) => {
-    const { href, title, className = "", mobile = false, ...other } = props;
+  ({ href, title, className = "", ...props }, ref) => {
+    //const { href, title, className = "", mobile = false, ...props } = props;
     const pathname = usePathname();
     return (
       <Link
-        {...other}
+        {...props}
         ref={ref}
         href={href}
         className={`${className} group relative`}
@@ -28,7 +27,6 @@ const FancyLink = React.forwardRef<HTMLAnchorElement, FancyLinkProps>(
           className={cn(
             "absolute -bottom-0.5 left-0 h-[1px] bg-primary duration-300 ease-in-out group-hover:w-full",
             pathname === href ? "h-[1.5px] w-full" : "w-0",
-            mobile ? "bg-secondary" : "bg-primary",
           )}
         />
       </Link>

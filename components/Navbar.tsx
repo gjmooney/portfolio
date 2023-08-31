@@ -1,19 +1,59 @@
+import {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+import { Menu } from "lucide-react";
 import Link from "next/link";
-import HamburgerIcon from "./HamburgerIcon";
 import { GithubIcon, LinkedinIcon, TwitterIcon } from "./Icons";
 import { ModeToggle } from "./ModeToggle";
 import FancyCircle from "./animations/FancyCircle";
 import FancyLink from "./animations/FancyLink";
-
+import SocialLinks from "./SocialLinks";
 //import { GithubIcon, LinkedinIcon, TwitterIcon } from "lucide-react";
 
 // TODO: fix right hand icon spacing
-// TODO: use a sheet for the mobile menu
 
 const Navbar = ({}) => {
   return (
-    <header className="relative flex w-full items-center justify-between border py-8 font-medium md:border-b-primary/40 md:px-32">
-      <HamburgerIcon className="flex flex-col items-center justify-center px-8 md:hidden" />
+    <header className="relative flex w-full items-center justify-between border p-8 font-medium md:border-b-primary/40 md:px-32">
+      <Sheet>
+        <SheetTrigger asChild className="md:hidden">
+          <Menu />
+        </SheetTrigger>
+        <SheetContent
+          side={"top"}
+          className="rounded-b-3xl bg-background/60 backdrop-blur-md"
+        >
+          <SheetHeader>
+            <SheetTitle className="mt-16 flex flex-col items-center justify-center text-2xl">
+              Navigate
+            </SheetTitle>
+          </SheetHeader>
+
+          <nav className="mb-16 mt-8 flex flex-col items-center justify-center gap-4">
+            <SheetClose asChild>
+              <FancyLink title="Home" href="/" />
+            </SheetClose>
+
+            <SheetClose asChild>
+              <FancyLink title="About" href="/about" />
+            </SheetClose>
+
+            <SheetClose asChild>
+              <FancyLink title="Projects" href="/projects" />
+            </SheetClose>
+            <SheetClose asChild>
+              <FancyLink title="Articles" href="/articles" />
+            </SheetClose>
+          </nav>
+
+          <SocialLinks className="flex items-center justify-around" />
+        </SheetContent>
+      </Sheet>
 
       <nav className="hidden items-center justify-between md:flex">
         <FancyLink title="Home" href="/" className="mr-4" />
@@ -26,40 +66,7 @@ const Navbar = ({}) => {
         <FancyCircle text="GM" className="mt-2 h-16 w-16 text-2xl font-bold" />
       </div>
 
-      <nav className="hidden items-center justify-between md:flex">
-        <Link href="/" target="_" className="icon-hover">
-          <GithubIcon />
-        </Link>
-        <Link href="/" target="_" className="icon-hover">
-          <TwitterIcon />
-        </Link>
-        <Link href="/" target="_" className="icon-hover">
-          <LinkedinIcon />
-        </Link>
-        <ModeToggle />
-      </nav>
-
-      {/** Pop up menu for mobile*/}
-      {/* <div className="fixed left-1/2 top-1/2 z-30 flex min-w-[70vw] -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-between rounded-lg bg-primary/75 py-32 text-secondary backdrop-blur-md">
-        <nav className="flex flex-col items-center justify-center">
-          <FancyLink title="Home" href="/" mobile={true} />
-          <FancyLink title="About" href="/about" mobile={true} />
-          <FancyLink title="Projects" href="/projects" mobile={true} />
-          <FancyLink title="Articles" href="/articles" mobile={true} />
-        </nav>
-        <nav className="hidden items-center justify-between md:flex">
-          <Link href="/" target="_" className="icon-hover">
-            <GithubIcon />
-          </Link>
-          <Link href="/" target="_" className="icon-hover">
-            <TwitterIcon />
-          </Link>
-          <Link href="/" target="_" className="icon-hover">
-            <LinkedinIcon />
-          </Link>
-          <ModeToggle />
-        </nav>
-      </div> */}
+      <SocialLinks className="hidden items-center justify-between md:flex" />
     </header>
   );
 };
