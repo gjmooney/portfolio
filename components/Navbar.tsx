@@ -66,7 +66,7 @@ const Navbar = ({}) => {
         <FancyCircle text="GM" className="mt-2 h-16 w-16 text-2xl font-bold" />
       </div>
 
-      <SocialLinks className="hidden items-center justify-between md:flex" />
+      <SocialLinks className="hidden items-center justify-between gap-2 md:flex" />
     </header>
   );
 };
