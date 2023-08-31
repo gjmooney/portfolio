@@ -5,9 +5,7 @@ import Skills from "@/components/Skills";
 import Timeline from "@/components/Timeline";
 import { cn } from "@/lib/utils";
 import { educationText, experiencesText } from "@/Text/TextBlurbs";
-import { AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { usePathname, useRouter } from "next/navigation";
 import profilePic from "public/profile/about-img.jpg";
 
 const Page = () => {

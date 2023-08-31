@@ -2,16 +2,13 @@
 
 import { allArticles, featuredArticles } from "@/Text/TextBlurbs";
 import AnimatedText from "@/components/animations/AnimatedText";
+import Transition from "@/components/animations/TransitionEffect";
+import { motion, useMotionValue } from "framer-motion";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
-import articleImg0 from "public/articles/modals.png";
 import articleImg1 from "public/articles/hoc.jpg";
 import todoImg from "public/articles/todo.png";
-import { spring, useMotionValue } from "framer-motion";
 import { MouseEvent, useRef } from "react";
-import { motion } from "framer-motion";
-import { cn } from "@/lib/utils";
-import Transition from "@/components/animations/TransitionEffect";
 
 interface FeaturedArticleProps {
   img: StaticImageData;
