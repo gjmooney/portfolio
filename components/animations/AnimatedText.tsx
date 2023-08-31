@@ -12,7 +12,7 @@ const header = {
   initial: {},
   animate: {
     transition: {
-      delay: 0.5,
+      delayChildren: 0.8,
       staggerChildren: 0.1,
     },
   },

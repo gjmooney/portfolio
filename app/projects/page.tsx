@@ -35,8 +35,6 @@ const Project = ({
         summary ? "rounded-3xl md:flex-row md:p-9" : "rounded-2xl",
       )}
     >
-      {/*  <Transition /> */}
-
       <div
         className={cn(
           "absolute -right-3 top-0 -z-10 w-[103%] bg-primary md:w-[101%]",
@@ -162,6 +160,7 @@ const page = () => {
 
   return (
     <main className="my-16 flex w-full flex-col items-center justify-center">
+      <Transition />
       <AnimatedText text="Imagination trumps knowledge!" className="" />
       <div className="z-0 mt-16 grid gap-20 md:grid-cols-12 md:gap-24 md:gap-y-32">
         <div className="md:col-span-12">

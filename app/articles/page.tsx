@@ -11,6 +11,7 @@ import { spring, useMotionValue } from "framer-motion";
 import { MouseEvent, useRef } from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
+import Transition from "@/components/animations/TransitionEffect";
 
 interface FeaturedArticleProps {
   img: StaticImageData;
@@ -128,6 +129,7 @@ const Article = ({ img, title, time, link }: FeaturedArticleProps) => {
 const page = () => {
   return (
     <main className="my-14 flex w-full flex-col items-center justify-center">
+      <Transition />
       <AnimatedText text="Words can change the world" />
       <div className="mt-16">
         <div className="grid gap-16 md:grid-cols-2">

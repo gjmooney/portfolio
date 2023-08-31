@@ -13,7 +13,7 @@ import profilePic from "public/profile/about-img.jpg";
 const Page = () => {
   return (
     <main className="my-16 flex w-full flex-col items-center justify-center">
-      {/* <Transition /> */}
+      <Transition />
       <AnimatedText text="Passion Fuels Purpose" className="" />
       <div className="z-0 mt-16 grid w-full grid-cols-1 gap-y-16 md:grid-cols-8 md:gap-16">
         <div className="col-span-1 flex flex-col items-start justify-start md:col-span-3">

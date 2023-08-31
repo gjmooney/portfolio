@@ -1,5 +1,3 @@
-"use client";
-
 import Navbar from "@/components/Navbar";
 import "./globals.css";
 import type { Metadata } from "next";
@@ -12,7 +10,7 @@ import { AnimatePresence } from "framer-motion";
 
 const inter = Inter({ subsets: ["latin"] });
 
-const metadata: Metadata = {
+export const metadata: Metadata = {
   title: "Portfolio",
   description: "This is a portfolio site",
 };
@@ -22,7 +20,6 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const pathname = usePathname();
   return (
     <html
       lang="en"
@@ -31,10 +28,7 @@ export default function RootLayout({
       <body className="flex min-h-screen w-full flex-col bg-secondary">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Navbar />
-          <div className="container flex-auto">
-            <Transition />
-            {children}
-          </div>
+          <div className="container flex-auto">{children}</div>
           <Footer />
         </ThemeProvider>
       </body>
