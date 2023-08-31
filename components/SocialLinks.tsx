@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { GithubIcon, LinkedinIcon, TwitterIcon } from "./Icons";
 import { ModeToggle } from "./ModeToggle";
-import { cn } from "@/lib/utils";
 
 interface SocialLinksProps {
   className?: string;

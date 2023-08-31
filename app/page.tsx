@@ -11,6 +11,8 @@ import heroPic from "public/profile/hero-img.png";
 export default function Home() {
   return (
     <main className="my-16 flex w-full flex-col items-center justify-center">
+      <HireMe />
+
       <Transition />
       <div className="w-full items-center justify-between md:flex">
         <div className="w-full md:w-1/2">
@@ -50,7 +52,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <HireMe />
     </main>
   );
 }

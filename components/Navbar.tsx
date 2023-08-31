@@ -51,7 +51,7 @@ const Navbar = ({}) => {
             </SheetClose>
           </nav>
 
-          <SocialLinks className="flex items-center justify-around" />
+          <SocialLinks className="flex items-center justify-between" />
         </SheetContent>
       </Sheet>
 
