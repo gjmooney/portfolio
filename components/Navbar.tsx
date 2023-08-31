@@ -55,7 +55,7 @@ const Navbar = ({}) => {
         </SheetContent>
       </Sheet>
 
-      <nav className="hidden items-center justify-between md:flex">
+      <nav className="hidden h-full items-center justify-between md:flex">
         <FancyLink title="Home" href="/" className="mr-4" />
         <FancyLink title="About" href="/about" className="mx-4" />
         <FancyLink title="Projects" href="/projects" className="mx-4" />
