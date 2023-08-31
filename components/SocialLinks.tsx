@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { GithubIcon, LinkedinIcon, TwitterIcon } from "./Icons";
 import { ModeToggle } from "./ModeToggle";
+import { buttonVariants } from "./ui/button";
+import { cn } from "@/lib/utils";
 
 interface SocialLinksProps {
   className?: string;
@@ -12,21 +14,30 @@ const SocialLinks = ({ className }: SocialLinksProps) => {
       <Link
         href="/"
         target="_"
-        className="icon-hover inline-flex items-center justify-center rounded-md border-transparent text-base font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
+        className={cn(
+          buttonVariants({ variant: "outline", size: "icon" }),
+          "icon-hover",
+        )}
       >
         <GithubIcon />
       </Link>
       <Link
         href="/"
         target="_"
-        className="icon-hover inline-flex items-center justify-center rounded-md border-transparent text-base font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
+        className={cn(
+          buttonVariants({ variant: "outline", size: "icon" }),
+          "icon-hover",
+        )}
       >
         <TwitterIcon />
       </Link>
       <Link
         href="/"
         target="_"
-        className="icon-hover inline-flex items-center justify-center rounded-md border-transparent text-base font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
+        className={cn(
+          buttonVariants({ variant: "outline", size: "icon" }),
+          "icon-hover",
+        )}
       >
         <LinkedinIcon />
       </Link>

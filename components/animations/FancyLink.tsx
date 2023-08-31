@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
+import { buttonVariants } from "../ui/button";
 
 interface FancyLinkProps {
   href: string;
@@ -20,7 +21,15 @@ const FancyLink = React.forwardRef<HTMLAnchorElement, FancyLinkProps>(
         {...props}
         ref={ref}
         href={href}
-        className={`${className} group relative`}
+        className={cn(
+          "group relative p-0",
+          buttonVariants({ variant: "outline", size: "navLink" }),
+          className,
+        )}
+        /* className={cn(
+          "group relative rounded-md border-2 border-transparent ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
+          className,
+        )} */
       >
         {title}
         <span
