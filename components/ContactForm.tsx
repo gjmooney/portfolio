@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-
+import emailjs from "@emailjs/browser";
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -17,6 +17,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { Textarea } from "./ui/textarea";
+import { env } from "process";
 
 const ContactForm = () => {
   const formSchema = z.object({
@@ -39,8 +40,22 @@ const ContactForm = () => {
     },
   });
 
-  const onSubmit = (values: z.infer<typeof formSchema>) => {
-    console.log("values", values);
+  const onSubmit = async (values: z.infer<typeof formSchema>) => {
+    await emailjs.send(
+      process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+      process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+      {
+        from_name: values.name,
+        to_name: "Blank",
+        from_email: values.email,
+        message: values.message,
+      },
+      process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!,
+    );
+
+    alert("Thank you. I will get back to you as soon as possible.");
+
+    form.reset();
   };
 
   return (

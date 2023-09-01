@@ -42,11 +42,7 @@ export default function Home() {
               Resume
               <LinkArrow className="mb-1 ml-1 w-5" />
             </Link>
-            <Link
-              href="mailto:g@gmail.com"
-              target="_blank"
-              className={buttonVariants()}
-            >
+            <Link href="/contact" className={buttonVariants()}>
               Contact
             </Link>
           </div>
