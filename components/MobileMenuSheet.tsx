@@ -1,37 +1,49 @@
-import { Button } from "@/components/ui/button";
 import {
   Sheet,
   SheetClose,
   SheetContent,
-  SheetDescription,
-  SheetFooter,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import { Menu } from "lucide-react";
+import SocialLinks from "./SocialLinks";
+import FancyLink from "./animations/FancyLink";
 
 const MobileMenuSheet = () => {
   return (
     <Sheet>
-      <SheetTrigger asChild>
-        <Button variant="outline">Open</Button>
+      <SheetTrigger asChild className="md:hidden">
+        <Menu />
       </SheetTrigger>
-      <SheetContent>
+      <SheetContent
+        side={"top"}
+        className="rounded-b-[4.5rem] bg-background/60 backdrop-blur-md"
+      >
         <SheetHeader>
-          <SheetTitle>Edit profile</SheetTitle>
-          <SheetDescription>
-            Make changes to your profile here. Click save when you&apos;re done.
-          </SheetDescription>
+          <SheetTitle className="mt-16 flex flex-col items-center justify-center text-2xl">
+            Check It Out
+          </SheetTitle>
         </SheetHeader>
-        <div className="grid gap-4 py-4">
-          <div className="grid grid-cols-4 items-center gap-4">sdsdsdsdsd</div>
-          <div className="grid grid-cols-4 items-center gap-4">sdsdsdsd</div>
-        </div>
-        <SheetFooter>
+
+        <nav className="mb-16 mt-8 flex flex-col items-center justify-center gap-4">
           <SheetClose asChild>
-            <Button type="submit">Save changes</Button>
+            <FancyLink title="Home" href="/" />
           </SheetClose>
-        </SheetFooter>
+
+          <SheetClose asChild>
+            <FancyLink title="About" href="/about" />
+          </SheetClose>
+
+          <SheetClose asChild>
+            <FancyLink title="Projects" href="/projects" />
+          </SheetClose>
+          <SheetClose asChild>
+            <FancyLink title="Articles" href="/articles" />
+          </SheetClose>
+        </nav>
+
+        <SocialLinks className="flex items-center justify-between" />
       </SheetContent>
     </Sheet>
   );
