@@ -77,7 +77,7 @@ const Article = ({ img, title, time, link }: ArticleProps) => {
       transition={{ duration: 0.8, ease: "easeInOut" }}
       className="my-4"
     >
-      <motion.li className="relative flex w-full flex-col justify-between rounded-xl border border-b-4 border-r-4 border-primary p-4 py-6 transition first:mt-0 last:mb-0 md:flex-row">
+      <li className="relative flex w-full flex-col justify-between rounded-xl border border-b-4 border-r-4 border-primary p-4 py-6 transition first:mt-0 last:mb-0 md:flex-row">
         {/* <MovingImage title={title} link={link} img={img} /> */}
         <h2 className="cursor-pointer text-xl font-semibold capitalize hover:underline">
           {title}
@@ -85,7 +85,7 @@ const Article = ({ img, title, time, link }: ArticleProps) => {
         <span className="text-sm font-semibold text-pastel-purple md:pl-4 md:text-base">
           {time}
         </span>
-      </motion.li>
+      </li>
     </motion.div>
   );
 };
