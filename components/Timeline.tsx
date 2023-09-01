@@ -14,7 +14,7 @@ const Timeline = ({ label, textArray }: TimelineProps) => {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start end", "center start"],
+    offset: ["start end", "end 0.6"],
   });
 
   return (
