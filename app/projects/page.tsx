@@ -42,24 +42,25 @@ const Project = ({
         )}
       />
 
-      <Link
-        href={link}
-        target="_blank"
-        className={cn(
-          "flex cursor-pointer flex-col gap-2 overflow-hidden rounded-lg",
-          summary ? "md:w-1/2" : "w-full",
-        )}
+      <div
+        className={cn("flex flex-col gap-2", summary ? "md:w-1/2" : "w-full")}
       >
-        <Image
-          src={CryptoThing}
-          alt={title}
-          priority
-          className="order-2 h-auto w-full duration-300 ease-in-out hover:scale-105 md:order-1"
-        />
+        <Link
+          href={link}
+          target="_blank"
+          className="cursor-pointer overflow-hidden rounded-lg"
+        >
+          <Image
+            src={CryptoThing}
+            alt={title}
+            priority
+            className="order-2 h-auto w-full rounded-lg duration-300 ease-in-out hover:scale-105 md:order-1"
+          />
+        </Link>
         <span className="order-1 text-sm font-medium text-pastel-purple md:order-2 md:text-xl">
           {type}
         </span>
-      </Link>
+      </div>
 
       <div
         className={cn(
