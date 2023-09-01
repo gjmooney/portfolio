@@ -2,9 +2,6 @@ import MobileMenuSheet from "./MobileMenuSheet";
 import SocialLinks from "./SocialLinks";
 import FancyCircle from "./animations/FancyCircle";
 import FancyLink from "./animations/FancyLink";
-//import { GithubIcon, LinkedinIcon, TwitterIcon } from "lucide-react";
-
-// TODO: fix right hand icon spacing
 
 const Navbar = ({}) => {
   return (

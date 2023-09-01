@@ -1,12 +1,9 @@
+import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
-import "./globals.css";
+import { ThemeProvider } from "@/components/ThemeProvider";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import Footer from "@/components/Footer";
-import { ThemeProvider } from "@/components/ThemeProvider";
-import Transition from "@/components/animations/TransitionEffect";
-import { usePathname } from "next/navigation";
-import { AnimatePresence } from "framer-motion";
+import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 

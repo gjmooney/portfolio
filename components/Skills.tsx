@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { LazyMotion, domAnimation, m } from "framer-motion";
 
 interface SkillProps {
   name: string;
@@ -11,17 +11,19 @@ interface SkillProps {
 // TODO: make sure circles don't render weird in prod. started happening when I made changed web to not use skill component
 const Skill = ({ name, x, y }: SkillProps) => {
   return (
-    <motion.div
-      className="absolute flex cursor-pointer items-center justify-center rounded-full bg-primary/80 px-3 py-2 text-sm font-semibold text-primary-foreground shadow-primary md:h-24 md:w-24 md:px-6 md:py-3 md:text-base "
-      whileHover={{
-        scale: 1.05,
-      }}
-      initial={{ x: 0, y: 0, opacity: 0 }}
-      whileInView={{ x, y, opacity: 1, transition: { duration: 1.5 } }}
-      viewport={{ once: true }}
-    >
-      {name}
-    </motion.div>
+    <LazyMotion strict features={domAnimation}>
+      <m.div
+        className="absolute flex cursor-pointer items-center justify-center rounded-full bg-primary/80 px-3 py-2 text-sm font-semibold text-primary-foreground shadow-primary md:h-24 md:w-24 md:px-6 md:py-3 md:text-base "
+        whileHover={{
+          scale: 1.05,
+        }}
+        initial={{ x: 0, y: 0, opacity: 0 }}
+        whileInView={{ x, y, opacity: 1, transition: { duration: 1.5 } }}
+        viewport={{ once: true }}
+      >
+        {name}
+      </m.div>
+    </LazyMotion>
   );
 };
 
@@ -31,7 +33,7 @@ const Skills = () => {
       <h2 className="mt-32 w-full text-center text-7xl font-bold md:text-8xl">
         Skills
       </h2>
-      <div className="bg-circularMobile relative flex h-[50vh] w-full items-center justify-center rounded-full md:h-screen md:bg-circular">
+      <div className="relative flex h-[50vh] w-full items-center justify-center rounded-full bg-circularMobile md:h-screen md:bg-circular">
         <div className="flex cursor-pointer items-center justify-center rounded-full bg-primary px-6 py-3 font-semibold text-primary-foreground shadow-primary duration-700 hover:scale-110 md:h-20 md:w-20">
           Web
         </div>

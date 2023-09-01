@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useScroll } from "framer-motion";
+import { LazyMotion, domAnimation, m, useScroll } from "framer-motion";
 import { useRef } from "react";
 
 import Details, { DetailsProps } from "./details/Details";
@@ -24,11 +24,12 @@ const Timeline = ({ label, textArray }: TimelineProps) => {
       </h2>
 
       <div className="relative mx-auto w-full md:w-[75%]" ref={ref}>
-        <motion.div
-          style={{ scaleY: scrollYProgress }}
-          className="absolute left-7 top-1 h-full w-[4px] origin-top bg-primary md:left-9"
-        />
-
+        <LazyMotion features={domAnimation}>
+          <m.div
+            style={{ scaleY: scrollYProgress }}
+            className="absolute left-7 top-1 h-full w-[4px] origin-top bg-primary md:left-9"
+          />
+        </LazyMotion>
         <ul className="flex flex-col items-start justify-between">
           {textArray.map((text) => (
             <Details

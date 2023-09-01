@@ -1,5 +1,5 @@
 import { motion, useScroll } from "framer-motion";
-import { RefObject, useRef } from "react";
+import { RefObject } from "react";
 
 interface ListItemIconProps {
   reference: RefObject<HTMLLIElement>;
