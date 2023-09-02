@@ -89,7 +89,10 @@ const Page = () => {
         <Timeline label="Education" textArray={educationText} />
       </div>
 
-      <ContactForm header />
+      {/** TODO fix this */}
+      <div className="overflow-hidden">
+        <ContactForm header />
+      </div>
     </main>
   );
 };

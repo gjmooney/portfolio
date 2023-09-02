@@ -13,6 +13,7 @@ interface FancyCircleProps {
 const FancyCircle = ({ text, className }: FancyCircleProps) => {
   return (
     <MotionLink
+      id="fancyCircle"
       href="/"
       whileHover={{
         backgroundColor: [
@@ -26,7 +27,7 @@ const FancyCircle = ({ text, className }: FancyCircleProps) => {
         transition: { duration: 3, repeat: Infinity },
       }}
       className={cn(
-        "flex items-center justify-center rounded-full border border-transparent bg-[#0F172A] text-[#F8FAFC] hover:text-[#0F172A] dark:border-primary md:border-2",
+        "flex items-center justify-center rounded-full border border-transparent bg-[#0F172A] text-[#F8FAFC] transition-all duration-700 hover:text-[#0F172A] dark:border-primary md:border-2",
         className,
       )}
     >
