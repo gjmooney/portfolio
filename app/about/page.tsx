@@ -1,6 +1,7 @@
 import AnimatedNumber from "@/components/animations/AnimatedNumber";
 import AnimatedText from "@/components/animations/AnimatedText";
 import Transition from "@/components/animations/TransitionEffect";
+import ContactForm from "@/components/ContactForm";
 import Skills from "@/components/Skills";
 import Timeline from "@/components/Timeline";
 import { cn } from "@/lib/utils";
@@ -54,7 +55,7 @@ const Page = () => {
         </div>
 
         {/** numbers container */}
-        <div className="col-span-1 flex items-end justify-between gap-5 text-xl font-medium capitalize text-primary/75 md:col-span-2 md:flex-col md:gap-0">
+        <div className="col-span-1 flex items-end justify-between gap-5 text-xl font-medium capitalize text-primary/90 md:col-span-2 md:flex-col md:gap-0">
           {/** first number */}
           <div className="flex flex-col items-center justify-center md:items-end">
             <span className="inline-block text-5xl font-bold md:text-7xl">
@@ -80,9 +81,15 @@ const Page = () => {
           </div>
         </div>
       </div>
+
       <Skills />
-      <Timeline label="Experience" textArray={experiencesText} />
-      <Timeline label="Education" textArray={educationText} />
+
+      <div>
+        <Timeline label="Experience" textArray={experiencesText} />
+        <Timeline label="Education" textArray={educationText} />
+      </div>
+
+      <ContactForm header />
     </main>
   );
 };

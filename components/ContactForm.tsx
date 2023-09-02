@@ -21,10 +21,11 @@ import { env } from "process";
 import { cn } from "@/lib/utils";
 
 interface ContactFormProps {
+  header?: boolean;
   className?: string;
 }
 
-const ContactForm = ({ className }: ContactFormProps) => {
+const ContactForm = ({ header, className }: ContactFormProps) => {
   const formSchema = z.object({
     name: z.string().min(1, { message: "You gotta tell me your name..." }),
     email: z
@@ -89,6 +90,11 @@ const ContactForm = ({ className }: ContactFormProps) => {
             onSubmit={form.handleSubmit(onSubmit)}
             className="w-full space-y-8"
           >
+            {header && (
+              <div className="flex items-center justify-center ">
+                <FormLabel className="text-4xl">Say Hi.</FormLabel>
+              </div>
+            )}
             <FormField
               control={form.control}
               name="name"

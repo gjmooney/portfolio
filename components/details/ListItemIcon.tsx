@@ -9,7 +9,7 @@ interface ListItemIconProps {
 const ListItemIcon = ({ reference }: ListItemIconProps) => {
   const { scrollYProgress } = useScroll({
     target: reference,
-    offset: ["center end", "start 0.7"],
+    offset: ["center end", "start center"],
     layoutEffect: false,
   });
 

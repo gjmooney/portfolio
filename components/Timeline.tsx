@@ -18,7 +18,7 @@ const Timeline = ({ label, textArray }: TimelineProps) => {
   });
 
   return (
-    <div className="my-40">
+    <div className="my-32">
       <h2 className="mb-16 w-full text-center text-5xl font-bold capitalize md:text-8xl">
         {label}
       </h2>
