@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import { Button } from "@/components/ui/button";
 import {
@@ -19,6 +19,7 @@ import { z } from "zod";
 import { Textarea } from "./ui/textarea";
 import { env } from "process";
 import { cn } from "@/lib/utils";
+import { useRef } from "react";
 
 interface ContactFormProps {
   header?: boolean;
@@ -26,6 +27,9 @@ interface ContactFormProps {
 }
 
 const ContactForm = ({ header, className }: ContactFormProps) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref);
+
   const formSchema = z.object({
     name: z.string().min(1, { message: "You gotta tell me your name..." }),
     email: z
@@ -67,16 +71,16 @@ const ContactForm = ({ header, className }: ContactFormProps) => {
   return (
     <motion.div
       initial={{
-        x: 700,
+        x: 550,
         opacity: 0,
       }}
-      animate={{
+      whileInView={{
         x: 0,
         opacity: 1,
       }}
       transition={{
         type: "spring",
-        delay: 0.7,
+        delay: header ? 0.4 : 0.7,
         duration: 1.8,
       }}
       className={cn(
