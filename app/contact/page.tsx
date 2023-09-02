@@ -9,11 +9,11 @@ const page = () => {
     <main className="my-14 flex w-full flex-col items-center justify-center">
       <Transition />
       <AnimatedText text="Say Hi" />
-      <div className="mt-16 flex h-full">
-        <div className="h-full w-1/2">
+      <div className="mt-16 flex h-full w-full flex-col gap-6 overflow-hidden md:flex-row">
+        <div className="order-2 h-full w-full md:order-1 md:w-1/2">
           <Image priority src={hand} alt="hand" />
         </div>
-        <ContactForm />
+        <ContactForm className="w-full md:order-2" />
       </div>
     </main>
   );

@@ -18,8 +18,13 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { Textarea } from "./ui/textarea";
 import { env } from "process";
+import { cn } from "@/lib/utils";
 
-const ContactForm = () => {
+interface ContactFormProps {
+  className?: string;
+}
+
+const ContactForm = ({ className }: ContactFormProps) => {
   const formSchema = z.object({
     name: z.string().min(1, { message: "You gotta tell me your name..." }),
     email: z
@@ -73,9 +78,12 @@ const ContactForm = () => {
         delay: 0.7,
         duration: 1.8,
       }}
-      className="relative z-0 flex w-1/2 items-center rounded-2xl"
+      className={cn(
+        "relative z-0 flex items-center rounded-2xl md:w-1/2",
+        className,
+      )}
     >
-      <div className="relative w-full rounded-2xl border border-primary bg-secondary p-14">
+      <div className="relative w-[98%] rounded-2xl border border-primary bg-secondary p-6 md:p-14">
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(onSubmit)}
@@ -133,6 +141,7 @@ const ContactForm = () => {
             <Button type="submit">Send an Email</Button>
           </form>
         </Form>
+
         <div className="absolute -right-3 top-0 -z-10 h-[102%] w-[103%] rounded-[2rem] rounded-br-2xl bg-primary md:w-[102%]" />
       </div>
     </motion.div>

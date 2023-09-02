@@ -11,7 +11,7 @@ const Navbar = ({}) => {
         <FancyLink title="Home" href="/" className="mr-4" />
         <FancyLink title="About" href="/about" className="mx-4" />
         <FancyLink title="Projects" href="/projects" className="mx-4" />
-        <FancyLink title="Articles" href="/articles" className="ml-4" />
+        <FancyLink title="Contact" href="/contact" className="ml-4" />
       </nav>
 
       <div className="absolute left-[50%] translate-x-[-50%]">
